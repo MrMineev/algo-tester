@@ -33,8 +33,8 @@ const ll INF = 1e18;
 
 #define MP make_pair
 #define pb push_back
-#define printl cout << "\n";
-#define dprintl cout << endl;
+#define prlll cout << "\n";
+#define dprlll cout << endl;
 #define loop(x, n) for (ll x = 0; x < n; x++)
 #define range(x, l, r) for (ll x = l; x < r; x++)
 #define show(a) cout << (a) << "\n";
@@ -57,13 +57,13 @@ void output(vector<T> &mas) {
   loop(i, mas.size()) {
     cout << mas[i] << " ";
   }
-  printl;
+  prlll;
 }
 
 template<typename T>
-void waste_read(int n) {
+void waste_read(ll n) {
   T ignore;
-  for (int i = 0; i < n; i++) cin >> ignore;
+  for (ll i = 0; i < n; i++) cin >> ignore;
 }
 
 ll to_number(char c) {

@@ -12,6 +12,10 @@ And to unit test the tests located in the folder "tests" add the "test" command.
 ```
 python manage.py compile test
 ```
+If you want to just compile and run the code use the "run" command.
+```
+python manage.py compile run
+```
 For stress testing write the correct/slow solution in stupid.cpp and the fast/incorrect solution in main.cpp, and then write a test generator in generator.cpp. Then just run the command
 ```
 python manage.py compile compile_stupid debug

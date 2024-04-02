@@ -16,11 +16,15 @@ is_compile = False
 is_testing = False
 is_stupid = False             
 is_debug = False
+is_run = False
 
 for arg in arguments:
     if arg == "debug":
         is_debug = True
         log("MODE STRESS")
+    elif arg == "run":
+        is_run = True
+        log("MODE RUN")
     elif arg == "compile_stupid":
         is_stupid = True
         log("MODE STUPID")
@@ -42,6 +46,11 @@ if is_compile:
     ccompile("main")
     # os.system("g++ main.cpp -o main -std=c++17 -Wall -Wextra -Wshadow -Werror")
     log("Finished!")
+
+if is_run:
+    log("[START]")
+    os.system("./main")
+    log("[END]")
 
 if is_testing:
     log("Init Testing...")
@@ -84,7 +93,7 @@ if is_debug:
         current_answer = open(f"ans_smart.txt", "r").read().strip()
         correct = open(f"ans_stupid.txt", "r").read().strip()
 
-        if end - start > 0.06:
+        if end - start > 1:
             print(f"\033[1;31;40m[{index + 1}] TL | {str(end - start)[:7]} s \033[0m") # ]]
             print("--- Test ------")
             print(open(f"test.txt", "r").read())
